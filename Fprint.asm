@@ -2,14 +2,14 @@
 lgth:
     push ebx ;
     mov ebx, eax;
-_for:
-    cmp byte [eax], 0 ;
-    jna _finish ;
-    inc eax ;
-    jmp _for
-_finish:
-    sub eax, ebx ;
-    pop ebx ;
+    _for:
+        cmp byte [eax], 0 ;
+        jna _finish ;
+        inc eax ;
+        jmp _for
+    _finish:
+        sub eax, ebx ;
+        pop ebx ;
     ret
 
 prt:
@@ -37,11 +37,22 @@ prtln:
     ; in linefeed
     push eax
     mov eax, 0ah 
-        push eax ; eax chứa 0ah trong stack
-        mov eax, esp ; lấy địa chỉ stack lưu vào eax
+        push eax ; tạo eax mới không chứa 0ah trong stack
+        mov eax, esp ; lấy địa chỉ stack eax = 0ah lưu vào eax
         call prt ; in giá trị eax hiện tại ( chứa 0ah)
         pop eax ; trả về giá trị eax ban đầu
     ; không thể push trực tiếp 0ah vào stack
+    pop eax
+    ret
+
+prtspace:
+    call prt 
+    push eax
+    mov eax, 20h
+        push eax
+        mov eax, esp
+        call prt
+        pop eax
     pop eax
     ret
 
