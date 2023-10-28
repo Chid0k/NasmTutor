@@ -14,7 +14,7 @@ _start:
     mov eax, msg
     call prt
 
-    ; nhập vào từ bàn phím eax = 3
+    ; nhập vào từ bàn phím call eax = 3
     mov edx, 255 ; chứa độ dài tối đa ủa chuỗi nhập vào
     mov ecx, str
     mov ebx, 0 ; read stdin file
