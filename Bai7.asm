@@ -9,9 +9,9 @@ global _start
 
 _start:
     mov eax, msg ;
-    call prtln
+    call prtspace
 
     mov eax, msg1 ;
-    call prtln
+    call prtspace
 
 call quit

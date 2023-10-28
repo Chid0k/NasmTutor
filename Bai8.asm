@@ -1,4 +1,4 @@
-; nhập chuỗi kí tự, in ra từng dòng
+; Argument
 ;./Bai8 101 102 103
 
 %include    'Fprint.asm'
